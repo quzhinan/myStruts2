@@ -1,0 +1,138 @@
+
+/* FORM ELEMENTS */
+	input[type=text], input[type=password], select, textarea{
+		border-style: solid;
+		border-width: 1px;
+		border-color: #CCCCCC;
+		font-size: 12px;
+		margin: 0;
+		padding: 1px 1px 0px, 1px;
+	}
+	
+	input[type=button], input[type=submit] {
+		font-size: medium;
+	}
+
+	input.check {
+		border: none;
+		width: auto;
+		height: auto;
+		margin: 0;
+	}
+	input.radio {
+		border: none;
+		width: auto;
+		height: auto;
+		margin: 0;
+	}
+	
+	input.button-action {
+		border-style: solid;
+		border-width: 1px;
+		border-color: RGB(149, 191, 130) RGB(59, 110, 34) RGB(59, 110, 34) RGB(149, 191, 130);
+		background-color: RGB(103, 165, 75);
+		cursor: pointer;
+		width:60px; 
+
+        padding: 3px;
+		font-size: 13px;
+		color: RGB(255, 255, 255);
+	}
+
+
+	input.button2-action {
+		border-style: solid;
+		border-width: 1px;
+		border-color: RGB(184, 212, 232) RGB(21, 47, 95) RGB(21, 47, 95) RGB(184, 212, 232);
+		background-color: RGB(0, 94, 172);
+		cursor: pointer;
+		width:60px; 
+
+        padding: 3px;
+		font-size: 13px;
+		color: RGB(255, 255, 255);
+	}
+	
+	input.button3-action {
+		border-style: solid;
+		border-width: 1px;
+		border-color: #272076;
+		background-color: #272099;
+		cursor: pointer;
+
+        padding: 3px;
+		font-size: 13px;
+		color: RGB(255, 255, 255);
+	}
+	
+	input.button-link {
+		border-style: solid;
+		border-width: 1px;
+		border-color: RGB(149, 191, 130) RGB(59, 110, 34) RGB(59, 110, 34) RGB(149, 191, 130);
+		background-color: RGB(103, 165, 75);
+		
+		cursor: pointer;
+
+        padding: 3px;
+		font-size: 13px;
+		color: RGB(255, 255, 255);
+	}
+
+	input.button-cancel {
+		border-style: solid;
+		border-width: 1px;
+		border-color: RGB(231, 231, 231) RGB(102, 102, 102) RGB(102, 102, 102) RGB(231, 231, 231);
+		background-color: RGB(240, 240, 240);
+		
+		cursor: pointer;
+		width:60px; 
+        padding: 3px;
+		font-size: 13px;
+		color: RGB(0, 0, 0);
+	}
+	
+	input.button-disabled {
+		border-color: RGB(255, 255, 255) RGB(132, 130, 132) RGB(132, 130, 132) RGB(255, 255, 255);
+		background-color: RGB(198, 195, 198);
+		
+		cursor: default;
+
+		color: RGB(132, 130, 132);
+	}
+	
+	a.link-action {
+		margin: 0px 0px 0px 0px;
+	}
+	
+	a.link-action2 {
+		color: #000000;
+	}
+	
+	input.readonly {
+		background-color: #F0F0F0;
+		cursor: default;
+	}
+	
+	hr.gray {
+		border:dotted;
+		border-bottom-width:2px;
+		border-bottom-color:#CCCCCC;
+		border-top:0px;
+		border-right:0px;
+		border-left:0px;
+		margin-top:2px;
+		margin-bottom:2px;
+		padding: 0;
+	}
+	
+	input.disable-ime {
+		ime-mode:disabled;
+	}
+	
+	input.active-ime {
+		ime-mode:active;
+	}
+	
+	
+/* END FORM ELEMENTS */
+	

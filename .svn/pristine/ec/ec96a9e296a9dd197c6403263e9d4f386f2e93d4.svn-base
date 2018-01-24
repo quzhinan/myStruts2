@@ -1,0 +1,14 @@
+$fullnameさま
+
+予定を却下しました。
+
+予定名：$title
+予定日時：$orderDate ( $startTime - $endTime )
+登録日時：$orderTime
+リンク：$location
+
+備考：
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+$remark
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+

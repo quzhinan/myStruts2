@@ -1,0 +1,16 @@
+div#evt_editor_box {
+	font-size: 14px;
+	user-select: none;
+}
+
+div#evt_editor_box table tr td:first-child {
+	width: 200px;
+	text-align: right;
+}
+
+div#evt_editor_box div.evt-message {
+	height: 30px;
+	width: 100%;
+	text-align: left;
+	color: red;
+}

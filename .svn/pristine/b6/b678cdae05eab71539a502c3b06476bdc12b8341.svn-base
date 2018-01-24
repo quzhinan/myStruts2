@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="starter" version="2.4" 
+         xmlns="http://java.sun.com/xml/ns/j2ee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<display-name>ienursing Support System</display-name>
+	
+	<session-config>
+    	<session-timeout>60</session-timeout>
+	</session-config>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:applicationContext*.xml</param-value>
+	</context-param>
+	
+	<!-- Filters -->
+    
+	<filter>
+        <filter-name>struts2-prepare</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
+	</filter>
+	
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>struts2-execute</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
+    </filter>
+	
+	<filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>strutsAttackDefenseFilter</filter-name>
+        <filter-class>jp.iesolutions.ienursing.web.filter.StrutsAttackDefenseFilter</filter-class>
+    </filter>
+
+	<filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>jp.iesolutions.ienursing.web.filter.LoginFilter</filter-class>
+		<init-param>
+			<param-name>indexPath</param-name>
+			<param-value>/welcome.ies</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignoreList</param-name>
+			<param-value>/ws/nursing!updateNursingRecordWithFile.ies,/ws/nursing!downloadDocument.ies,/ws/nursing!viewNursingRecordById.ies,/ws/device!registerDeviceUID.ies,/ws/nursing!nursingListByCharger.ies,/ws/nursing!confirmModified.ies,/ws/nursing!confirmComment.ies,/ws/nursing!getOfficeList.ies,/welcome.ies,/login.ies,/logout.ies,/welcome!exportNursings.ies</param-value>
+		</init-param>
+    </filter>
+	
+	<filter>
+        <filter-name>tokenFilter</filter-name>
+        <filter-class>jp.iesolutions.ienursing.web.filter.TokenFilter</filter-class>
+		<init-param>
+			<param-name>ignoreList</param-name>
+			<param-value>/ws,/welcome.ies,/login.ies,/logout.ies,/pdf-download,/csv-load,download.ies,downloadRecordPhotos.ies,/welcome!exportNursings.ies</param-value>
+		</init-param>
+    </filter>
+	
+	<filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>strutsAttackDefenseFilter</filter-name>
+        <url-pattern>*.ies</url-pattern>
+    </filter-mapping>
+
+	<filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>*.ies</url-pattern>
+    </filter-mapping>
+	
+	<filter-mapping>
+        <filter-name>tokenFilter</filter-name>
+        <url-pattern>*.ies</url-pattern>
+    </filter-mapping>
+	
+	<filter-mapping>
+        <filter-name>struts2-prepare</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts2-execute</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+	
+	<!-- Listeners -->
+	<listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	<listener>
+        <listener-class>jp.iesolutions.ienursing.web.listener.UserSessionListener</listener-class>
+    </listener>
+    <!--
+    <listener>
+        <listener-class>jp.iesolutions.meeting.web.listener.FaxTiffFileTransListener</listener-class>
+    </listener>
+    -->
+    <!-- Servlets -->
+    <servlet>
+    	<servlet-name>jspSupportServlet</servlet-name>
+    	<servlet-class>org.apache.struts2.views.JspSupportServlet</servlet-class>
+    	<load-on-startup>5</load-on-startup>
+    </servlet>
+    
+    <!-- Welcome file lists -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error-404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error-404.jsp</location>
+    </error-page>
+
+</web-app>

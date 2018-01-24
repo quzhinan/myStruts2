@@ -1,0 +1,13 @@
+$fullnameさま
+
+担当（ヘルパー）：$userName
+利用者：$customerName
+日時：$visitDate 
+時間：( $startTime - $endTime )
+区分：$serviceName （ $serviceTime1分、$serviceTime2分）
+介護記録：$nursingRecord
+今日の様子：
+発汗：$sweat		食欲：$appetite
+顔色：$state
+睡眠：$sleep
+

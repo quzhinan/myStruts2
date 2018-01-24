@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:amq="http://activemq.apache.org/schema/core" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://activemq.apache.org/schema/core  http://activemq.apache.org/schema/core/activemq-core-5.2.0.xsd
+	http://www.springframework.org/schema/jms  http://www.springframework.org/schema/jms/spring-jms-2.5.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:component-scan base-package="jp.iesolutions.ienursing" />
+	<context:property-placeholder location="classpath:system.properties" />
+
+	<!-- Transaction annotation -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- DB Data Source -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+		<property name="validationQuery">
+			<value>select 1</value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>jp.iesolutions.ienursing.models.Constant</value>
+				<value>jp.iesolutions.ienursing.models.Environment</value>
+				<value>jp.iesolutions.ienursing.models.User</value>
+				<value>jp.iesolutions.ienursing.models.Nursing</value>
+				<value>jp.iesolutions.ienursing.models.Device</value>
+				<value>jp.iesolutions.ienursing.models.Customer</value>
+				<value>jp.iesolutions.ienursing.models.Office</value>
+				<value>jp.iesolutions.ienursing.models.Master</value>
+				<value>jp.iesolutions.ienursing.models.Service</value>
+				<value>jp.iesolutions.ienursing.models.Event</value>
+				<value>jp.iesolutions.ienursing.models.EventItem</value>
+				<value>jp.iesolutions.ienursing.models.Week</value>
+			</list>
+		</property>
+		<property name="annotatedPackages">
+			<list>
+				<value>jp.iesolutions.ienursing.models</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+				hibernate.show_sql=false
+				hibernate.jdbc.batch_size=20
+			</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- PDF Converter Invalid <bean id="pdfConverter" class="jp.iesolutions.converter.impl.PDFConverterInvalid" 
+		> </bean> -->
+
+	<!-- DAO -->
+	<bean id="constantDao" class="jp.iesolutions.ienursing.daos.hibernate.ConstantDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="environmentDao"
+		class="jp.iesolutions.ienursing.daos.hibernate.EnvironmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="userDao" class="jp.iesolutions.ienursing.daos.hibernate.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="masterDao" class="jp.iesolutions.ienursing.daos.hibernate.MasterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="nursingDao" class="jp.iesolutions.ienursing.daos.hibernate.NursingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="deviceDao" class="jp.iesolutions.ienursing.daos.hibernate.DeviceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="customerDao" class="jp.iesolutions.ienursing.daos.hibernate.CustomerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="officeDao" class="jp.iesolutions.ienursing.daos.hibernate.OfficeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="eventDao" class="jp.iesolutions.ienursing.daos.hibernate.EventDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="eventItemDao"
+		class="jp.iesolutions.ienursing.daos.hibernate.EventItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="weekDao" class="jp.iesolutions.ienursing.daos.hibernate.WeekDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="serviceDao" class="jp.iesolutions.ienursing.daos.hibernate.ServiceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="commentDao" class="jp.iesolutions.ienursing.daos.hibernate.CommentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Service -->
+	<bean id="constantService"
+		class="jp.iesolutions.ienursing.services.hibernate.ConstantServiceImpl">
+	</bean>
+	<bean id="environmentService"
+		class="jp.iesolutions.ienursing.services.hibernate.EnvironmentServiceImpl">
+	</bean>
+	<bean id="userService"
+		class="jp.iesolutions.ienursing.services.hibernate.UserServiceImpl">
+		<property name="maxLoginTimes" value="${max.login.times}" />
+	</bean>
+	<bean id="nursingService"
+		class="jp.iesolutions.ienursing.services.hibernate.NursingServiceImpl">
+		<property name="uploadDirPath" value="${path.upload.path}" />
+		<property name="zipPassword" value="${file.zip.password}" />
+		
+		<property name="exportNursingDir" value="${nursing.export.dir}" />
+		<property name="exportNursingDay" value="${nursing.export.day}" />
+		<property name="exportZipNursingDay" value="${nursing.zip.export.day}" />
+	</bean>
+	<bean id="deviceService"
+		class="jp.iesolutions.ienursing.services.hibernate.DeviceServiceImpl" />
+	<bean id="customerService"
+		class="jp.iesolutions.ienursing.services.hibernate.CustomerServiceImpl">
+		<property name="uploadDirPath" value="${path.upload.path}" />
+	</bean>
+
+	<bean id="officeService"
+		class="jp.iesolutions.ienursing.services.hibernate.OfficeServiceImpl" />
+
+	<bean id="eventService"
+		class="jp.iesolutions.ienursing.services.hibernate.EventServiceImpl" />
+
+	<bean id="weekService"
+		class="jp.iesolutions.ienursing.services.hibernate.WeekServiceImpl" />
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl" />
+
+	<bean id="mailService"
+		class="jp.iesolutions.ienursing.services.hibernate.MailServiceImpl">
+		<property name="host">
+			<value>${mail.host}</value>
+		</property>
+		<property name="port">
+			<value>${mail.port}</value>
+		</property>
+		<property name="username">
+			<value>${mail.username}</value>
+		</property>
+		<property name="password">
+			<value>${mail.password}</value>
+		</property>
+		<property name="senderName">
+			<value>${mail.senderName}</value>
+		</property>
+		<property name="senderAddress">
+			<value>${mail.senderAddress}</value>
+		</property>
+		<property name="conveneMailSubject">
+			<value>${conveneResultMail.subject}</value>
+		</property>
+		<property name="sweatOne">
+			<value>${today.sweat.one}</value>
+		</property>
+		<property name="sweatTwo">
+			<value>${today.sweat.two}</value>
+		</property>
+		<property name="stateOne">
+			<value>${today.state.one}</value>
+		</property>
+		<property name="stateTwo">
+			<value>${today.state.two}</value>
+		</property>
+		<property name="stateThree">
+			<value>${today.state.three}</value>
+		</property>
+		<property name="appetiteOne">
+			<value>${today.appetite.one}</value>
+		</property>
+		<property name="appetiteTwo">
+			<value>${today.appetite.two}</value>
+		</property>
+		<property name="appetiteThree">
+			<value>${today.appetite.three}</value>
+		</property>
+		<property name="sleepOne">
+			<value>${today.sleep.one}</value>
+		</property>
+		<property name="sleepTwo">
+			<value>${today.sleep.two}</value>
+		</property>
+		<property name="sleepThree">
+			<value>${today.sleep.three}</value>
+		</property>
+		<property name="sleepFour">
+			<value>${today.sleep.four}</value>
+		</property>
+		<property name="encoding">
+			<value>UTF-8</value>
+		</property>
+		<property name="maxRetry">
+			<value>1</value>
+		</property>
+		<property name="retryInterval">
+			<value>10</value>
+		</property>
+		<property name="multiSendInterval">
+			<value>6</value>
+		</property>
+		<property name="domainName" value="${domain.name}" />
+	</bean>
+
+	<bean id="authService"
+		class="jp.iesolutions.ienursing.services.hibernate.AuthServiceImpl" />
+		
+	<bean id="commentService"
+		class="jp.iesolutions.ienursing.services.hibernate.CommentServiceImpl" />
+
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="resourceLoaderPath">
+			<value>classpath:velocity</value>
+		</property>
+	</bean>
+
+	<bean id="masterService"
+		class="jp.iesolutions.ienursing.services.hibernate.MasterServiceImpl" />
+
+	<bean id="serviceService"
+		class="jp.iesolutions.ienursing.services.hibernate.ServiceServiceImpl" />
+
+	<!-- PDF Helper -->
+	<bean id="customerMonthNursingPDFGenerator"
+		class="jp.iesolutions.ienursing.pdf.CustomerMonthNursingPDFGenerator">
+		<property name="tempFileFolder" value="${path.pdf.temp.path}" />
+	</bean>
+	<bean id="customerMonthShiftPDFGenerator"
+		class="jp.iesolutions.ienursing.pdf.CustomerMonthShiftPDFGenerator">
+		<property name="tempFileFolder" value="${path.pdf.temp.path}" />
+	</bean>
+	<bean id="customerNursingRecordPDFGenerator"
+		class="jp.iesolutions.ienursing.pdf.CustomerNursingRecordPDFGenerator">
+		<property name="tempFileFolder" value="${path.pdf.temp.path}" />
+	</bean>
+	<bean id="helperMonthShiftPDFGenerator"
+		class="jp.iesolutions.ienursing.pdf.HelperMonthShiftPDFGenerator">
+		<property name="tempFileFolder" value="${path.pdf.temp.path}" />
+	</bean>
+
+	<!-- Data Helper -->
+	<bean id="radarDataReceiveHelper"
+		class="jp.iesolutions.ienursing.data.helper.RadarDataReceiveHelper"
+		init-method="init" destroy-method="destroy">
+		<property name="isDevelopMent" value="${push.development}" />
+	</bean>
+
+	<!-- Helper -->
+	<bean id="constantHelper" class="jp.iesolutions.ienursing.helper.ConstantHelper">
+		<property name="constantService">
+			<ref bean="constantService" />
+		</property>
+		<property name="instance">
+			<ref bean="constantHelper" />
+		</property>
+	</bean>
+	<bean id="systemOptionsHelper" class="jp.iesolutions.ienursing.helper.SystemOptionsHelper">
+		<property name="environmentService">
+			<ref bean="environmentService" />
+		</property>
+		<property name="instance">
+			<ref bean="systemOptionsHelper" />
+		</property>
+	</bean>
+	<bean id="masterHelper" class="jp.iesolutions.ienursing.data.helper.MasterHelper">
+		<property name="masterService">
+			<ref bean="masterService" />
+		</property>
+		<property name="instance">
+			<ref bean="masterHelper" />
+		</property>
+	</bean>
+
+
+	<!-- Spring Quartz (do batchDeleteusersJob) ienursing -->
+
+	<!-- Utils -->
+	<bean id="csvMaker" class="jp.iesolutions.ienursing.util.CSVMaker">
+		<property name="csvPath" value="${path.file.path}" />
+	</bean>
+
+
+	<!-- 長期間保管 batch configuration -->
+	<!-- <bean id="exportJob"
+		class="jp.iesolutions.ienursing.batch.listener.ExportJobListener">
+		<property name="nursingService">
+			<ref bean="nursingService" />
+		</property>
+	</bean>
+	<bean id="jobDetailFactory"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="exportJob" />
+		</property>
+		<property name="targetMethod" value="exportNursing" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="cronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetailFactory" />
+		<property name="cronExpression" value="0/40 * * * * ?" />
+	</bean>
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger" />
+			</list>
+		</property>
+	</bean> -->
+</beans>

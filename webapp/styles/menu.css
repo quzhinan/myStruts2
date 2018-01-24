@@ -1,0 +1,24 @@
+.menu {
+	height: 37px;
+	font-family: "MS UI Gothic";
+	font-size: 12pt;
+	text-align: center;
+	background-image: url(../images/menu-bg.png);
+	color: #FFF;
+	font-weight: 400;
+}
+
+.menu a:link{
+	text-decoration: none;
+	color: #FFF;
+}
+
+.menu a:hover{
+	text-decoration: none;
+	color: #FFF;
+}
+
+.menu a:visited{
+	text-decoration: none;
+	color: #FFF;
+}

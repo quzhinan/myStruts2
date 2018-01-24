@@ -1,0 +1,388 @@
+/*
+.list {
+	font-family: "MS UI Gothic";
+	font-size: 12pt;
+	text-align: center;
+	border: 1px solid #dedede;
+	overflow: hidden;
+	width: 900px;
+}
+
+.listtd {
+	font-family: "MS UI Gothic";
+	font-size: 12pt;
+	text-align: center;
+	border: 1px solid #dedede;
+	border-width:1 0 0 1;
+	overflow: hidden;
+	height: 30px;
+}
+*/
+
+/* Page Content Style */
+table.page-content {
+	width: 100%;
+}
+table.page-content tr.header {
+}
+table.page-content tr.header td.search {
+	vertical-align: bottom;
+}
+table.page-content tr.header td.warning {
+	color: #fc0000;
+}
+
+/* table.page-content tr.header */ td.warning div.warning-box {
+	padding: 5px;
+	height: 12px;
+	border-radius: 6px;
+	color: #ffffff;
+	text-align: center;
+	background-color: #f74d4d;
+}
+
+/* table.page-content tr.header */ td.warning div[type=msg] {
+	background-color: #ffb848;
+}
+
+/* table.page-content tr.header */ td.warning div:empty {
+	display: none;
+}
+
+table.page-content tr.header td.title {
+	padding-right: 30px;
+	width: 250px;
+	text-align: right;
+	
+	font-size: 20px;
+	font-weight: bold;
+}
+table.page-content tr.header td.date {
+	width: 200px;
+	text-align: right;
+}
+table.page-content tr.content {}
+table.page-content tr.content td.list {
+	width: 200px;
+	vertical-align: top;
+}
+table.page-content tr.content td.grid {
+	vertical-align: top;
+}
+table.page-content tr.content td.items {
+	vertical-align: top;
+}
+table.page-content tr.content {}
+table.page-content tr.footer td.total {}
+table.page-content tr.footer td.buttons {}
+table.page-content tr.footer td.action {}
+
+table.page-content tr.header td.search input {
+	padding: 5px;
+	width: 150px;
+	height: 15px;
+}
+
+table.page-content tr.header td.search img {
+	width: 20px;
+	cursor: pointer;
+}
+
+table.page-content tr.content td.list div.list-box {
+	padding: 5px;
+	width: 190px;
+	height: 410px;
+	
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+	background: linear-gradient(to right, #cddbf4, #cddbf4, #cddbf4, #ffffff);
+}
+
+table.page-content tr.content td.list div.add-box {
+	padding: 0px 5px;
+	width: 180px;
+	height: 30px;
+	
+	border: 1px #cccccc solid;
+}
+
+table.page-content tr.content td.list div.list-box ul {
+	margin: 0px;
+	padding:0px;
+	list-style-type: none;
+	text-align: left;
+}
+
+table.page-content tr.content td.list div.list-box li {
+	padding: 10px;
+	width: 160px;
+	height: 14px;
+	
+	font-size: 14px;
+	
+	overflow: hidden;
+	cursor: pointer;
+}
+
+table.page-content tr.content td.list div.list-box li[selected] {
+	color: #9c9c9c;
+}
+
+table.page-content-nofooter {}
+
+table.page-content-nofooter tr.content td.list {
+	width: 200px;
+	height: 470px;
+}
+
+table.page-content-nofooter tr.content td.list div.list-box {
+	height: 430px;
+}
+
+/* Page Plan Style */
+
+div.plan-header-box {
+	width: 990px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+table.plan-header {
+	border-collapse: collapse;
+}
+table.plan-header tr td {
+	width: 23px;
+	height: 40px;
+	
+	border: 1px #000000 solid;
+	background-color: #cddbf4;
+	
+	text-align: center;
+	vertical-align: middle;
+}
+
+div.plan-content-box {
+	height: 320px;
+	width: 990px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+table.plan-content {
+}
+
+table.plan-content tr td {
+	height: 55px;
+	background-color: #ffffff;
+	
+	font-size: 12px;
+	line-height: 13px;
+	user-select: none;
+	cursor: default;
+}
+
+table.plan-content tr td.plan {
+	cursor: pointer;
+}
+
+table.plan-content tr td.actual {
+	cursor: pointer;
+}
+table tr td.plan-cell-today {
+	background-color: #b8dee7;
+}
+table tr td.plan-cell-today span {
+	color: #f74d4d;
+}
+table tr td.plan-cell-weekend {
+	background-color: #fbd5b6;
+}
+
+/* Page Shift Style */
+
+table.shift-content {}
+
+table.shift-content div.shift-box {
+	width: 790px;
+	height: 480px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+table.shift-content div.shift-title {}
+
+table.shift-content div.shift-title table {
+	border-collapse: collapse;	
+}
+
+table.shift-content div.shift-title table td.plan-title {
+	padding: 2px;
+	border: 1px #000000 solid;
+	width: 105px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #cddbf4;
+}
+
+table.shift-content div.helper-box {
+	padding: 5px;
+	width: 190px;
+	height: 420px;
+	
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+	border: 1px #cccccc solid;
+	/*background: linear-gradient(to left, #cddbf4, #cddbf4, #cddbf4, #ffffff);*/
+}
+
+table.shift-content div.shift-box table {
+	border-collapse: collapse;	
+}
+
+table.shift-content div.shift-box table td {
+	padding: 2px;
+	border: 1px #000000 solid;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.shift-content div.shift-box table td.plan-cell {
+	width: 105px;
+	height: 150px;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-day {
+	position: relative;
+	display: inline-block;
+	padding-top: 2px;
+	width: 25px;
+	height: 16px;
+	
+	border-radius: 2px;
+	
+	text-align: center;
+	vertical-align: middle;
+	font-size: 16px;
+	color: #ffffff;
+	background-color: #6a7fbb;
+}
+
+table.shift-content div.shift-box table td.plan-cell-today div.plan-day {
+	background-color: #f74d4d;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item {
+	margin-top:2px;
+	font-size: 10px;
+	border: 1px solid #6897c1;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div {
+	text-align: left;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div[time1] {
+	display: inline-block;
+	padding-top: 5px;
+	width: 32px;
+	height: 15px;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div[time2] {
+	display: inline-block;
+	padding-top: 7px;
+	width: 28px;
+	height: 13px;
+	vertical-align: bottom;
+	color: #000000;
+	font-size: 10px;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div[service] {
+	padding-top: 4px;
+	display: inline-block;
+	width: 20px;
+	height: 16px;
+	border-left: 1px solid #6897c1;
+	font-size: 10px;
+	text-align: center;
+	vertical-align: middle;
+	color: #000000;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div[helper] {
+	padding-top: 4px;
+	display: inline-block;
+	width: 50px;
+	height: 14px;
+	border-top: 1px solid #6897c1;
+	font-size: 12px;
+	cursor: pointer;
+	color: #000000;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div[follower] {
+	padding-top: 4px;
+	display: inline-block;
+	width: 50px;
+	height: 14px;
+	border-top: 1px solid #6897c1;
+	font-size: 12px;
+	cursor: pointer;
+	color: #000000;
+}
+
+table.shift-content div.shift-box table td.plan-cell div.plan-item div:empty {
+	background-color: #aaaaaa;
+}
+
+/* ---- */
+
+table.shift-content div.helper-box div.item {
+	display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	width: 150px;
+	height: 30px;
+	
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px #000000 solid;
+	background-color: #D5E1B8;
+	
+	color: #000000;
+}
+
+table.shift-content div.helper-box div.item span:first-child {
+	color: #666666;
+}
+
+table.shift-content div.helper-box div[selected] {
+	background-color: #C86351;
+	
+	color: #ffffff;
+}
+
+table.shift-content div.helper-box div[selected] span:first-child {
+	color: #ffffff;
+}
+
+.actionmessage{
+	color:green;
+	font-size:16px;
+}
+
+.actionerror{
+	color:red;
+	font-size:16px;
+}
+
+

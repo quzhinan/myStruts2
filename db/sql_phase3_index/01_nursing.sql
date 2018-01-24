@@ -1,0 +1,1 @@
+ALTER TABLE nursing ADD INDEX nursing_customer_code(customer_code);

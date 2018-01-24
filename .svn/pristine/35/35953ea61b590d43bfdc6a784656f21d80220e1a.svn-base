@@ -1,0 +1,37 @@
+
+/* UL.ERRORMESSAGE */
+ 		
+    ul.errorMessage {
+		margin: 10px;
+		padding: 5px 5px 5px 20px;
+		width: auto;
+		
+		color: black;
+		font-weight: normal;
+		
+		border-style: solid;
+		border-width: 1px;
+		border-color: RGB(221, 60, 16);
+		background-color: RGB(255, 235, 232);
+	}
+    ul.errorMessage li {
+        margin: 0;
+        padding: 2px;
+        text-align: left;
+        list-style: disc;
+        font-size: 13px;
+    }
+    
+    ul.errorMessage-small {
+		margin: 10px;
+		padding: 5px 5px 5px 20px;
+		width: 150px;
+	}
+    ul.errorMessage-small li {
+        margin: 0;
+        padding: 2px;
+        text-align: left;
+        list-style: disc;
+        font-size: 13px;
+    }
+/* END UL.errorMessage */

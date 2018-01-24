@@ -1,0 +1,207 @@
+body{
+	
+    overflow-x:hidden;
+}
+/* main & welcome frame */
+div#page-main {
+	width: 100%;
+    min-height: 400px;
+}
+
+div#page-main table.main-title-box {
+	
+}
+
+div#page-main table.main-title-box td.main-logo {
+	margin: 0;
+	padding: 10px 0px 10px 10px;
+}
+div#page-main table.main-title-box td.main-header {
+	margin: 0;
+	padding: 20px 10px 0px 30px;
+	vertical-align : top;
+	width: 100%;
+	text-align: left;
+	font-family: Hannotate TC;
+	font-size: 25px;
+	font-weight: bold;
+	color: #647eb5;
+}
+
+div#page-main table.main-title-box td.main-welcome {
+	width: 5%;
+	margin: 0;
+	padding: 30px 20px 0px 0px;
+	text-align: right;
+	vertical-align: center;
+}
+
+div#page-main table.main-title-box td.main-menu {
+	padding: 10px 0px 0px 0px;
+	border-top:#5f6079 solid 1px;
+}
+
+div#page-main table.main-title-box td.main-line {
+	padding: 0px 0px 0px 0px;
+	height: 20px;
+	font-size: 2px;
+	background-color:#647eb5;
+}
+
+div#page-main table.main-menu-box {
+	border-color: #647eb5;
+}
+
+div#page-main table.main-menu-box td {
+	padding: 5px 2px 1px 2px;
+    font-size: 14px;
+    font-weight: none;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+div#page-main table.main-menu-box td:hover {
+	text-decoration: underline;
+}
+
+div#page-main table.main-menu-box td.start {
+	background: url("../images/menu_bg.png") no-repeat scroll left top transparent;
+	background-color:#0c066e;
+}
+
+div#page-main table.main-menu-box td.settings {
+    font-size: 12px;
+}
+
+div#page-main table.main-content-box {
+	font-size: 14px;
+}
+
+div#page-main table.main-content-box td.main-content {
+	padding: 10px 30px 0px 30px;
+}
+
+div#page-main table.main-content-box td.main-footer-line {
+	margin: 0;
+	padding: 0;
+	/* width: 100%; */
+	border-top: 1px solid #CCCCCC;
+}
+
+div#page-main table.main-content-box td.main-footer-gotop {
+	text-align: right;
+	font-family: Verdana,Helvetica,sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #999999;
+	padding: 5px 20px 0px 0px;
+}
+
+div#page-main table.main-content-box td.main-footer-gotop a {
+	color: #3366CC;
+	text-decoration: none;
+}
+div#page-main table.main-content-box td.main-footer-gotop a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+div#page-main table.main-content-box td.main-footer-gotop a:active {
+	color: #3366CC;
+}
+
+div#page-main table.main-content-box td.main-footer-system-alias {
+	text-align: left;
+	text-decoration: none;
+	font-family: Verdana,Helvetica,sans-serif;
+	font-size: 10px;
+	vertical-align: top;
+	/* padding: 2px 0px 0px 20px; */
+	padding: 14px 0px 0px 20px;
+}
+
+div#page-main table.main-content-box td.main-footer-copyright {
+	text-align: left;
+	text-decoration: none;
+	font-family: Verdana,Helvetica,sans-serif;
+	font-size: 10px;
+	color: #999999;
+	padding: 5px 0px 0px 20px;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.logo-footer {
+	/*
+	width: expression(this.height > 14 ? this.width = this.width * 14 / this.height : "auto");
+	height: expression(this.height > 14 ? "14px" : "auto");
+	max-height:14px;
+	*/
+}
+
+/* Main menu style */
+
+div#page-main td.page-menu {
+	padding: 20px 10px 2px 10px;
+	border-bottom: 3px solid #6475b6;
+}
+
+div#page-main td.page-menu ul {
+	margin: 0px;
+	padding:0px;
+	list-style-type: none;
+}
+
+div#page-main td.page-menu ul li {
+	margin: 0px 0px 0px -5px;
+	padding: 8px 10px 2px 10px;
+	display: inline;
+	
+	cursor: pointer;
+	
+	border-radius: 7px 7px 0 0;
+	border: 2px solid #6475b6;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+div#page-main td.page-menu ul li[selected] {
+	background-color: #6475b6;
+	color: #ffffff;
+}
+
+div.home-menu {
+	margin: 60px 20px;
+}
+
+div.home-menu > div {
+	display: inline-block;
+}
+
+div.home-menu div {
+	width: 180px;
+	text-align: center;
+	
+	cursor: pointer;
+	
+	font-size: 16px;
+	color: #000000;
+}
+
+div.home-menu img {
+	height: 100px;
+}
+
+div.home-menu div.disabled div {
+	color: gray;
+	cursor: default;
+}
+
+div.home-menu div.disabled img {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}

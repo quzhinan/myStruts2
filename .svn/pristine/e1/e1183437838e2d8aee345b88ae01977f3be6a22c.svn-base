@@ -1,0 +1,9 @@
+#ui-datepicker-div {
+	font-size: 62.5%;
+}
+
+.error-red {
+	color: red;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fad42e; background: #fbec88; color: #363636; }

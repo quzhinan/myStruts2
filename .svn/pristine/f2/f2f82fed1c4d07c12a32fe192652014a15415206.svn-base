@@ -1,0 +1,351 @@
+
+div#scheduleBox {
+}
+
+div#scheduleBox div#headerBox {
+}
+
+div#scheduleBox div#headerBox table {
+	height: 25px;
+}
+
+div#scheduleBox div#headerBox div#dateBox {
+}
+
+div#scheduleBox div#headerBox div.today {
+	padding: 3px 10px 1px 10px;
+	cursor: pointer;
+	color: #ffffff;
+	border-radius: 2px;
+	border: 1px #777777 solid;
+	background-color: #ffb848;
+}
+
+div#scheduleBox div#contentBox {
+	padding: 10px 0;
+}
+
+/* Event Common */
+
+div#scheduleBox div.event {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+div#scheduleBox div.event table {
+	width: 100%;
+}
+
+div#scheduleBox div.event table tr td {
+}
+
+div#scheduleBox div.event table tr td.time {
+	padding: 2px 5px 0px;
+	background-color: #cddbf4;
+}
+
+div#scheduleBox div.event table tr td:first-child {
+	width: 100px;
+}
+
+div#scheduleBox div.event table tr td:nth-child(2) {
+	width: 50px;
+}
+
+/* Event Header */
+
+div#scheduleBox div.event-header {
+	
+}
+
+/* Event Grid */
+
+div#scheduleBox div.event-grid {
+	
+	min-height: 400px;
+	min-width: 500px;
+	
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+div#scheduleBox div.event-cell {
+	
+}
+
+div#scheduleBox div.event-col {
+	position: relative;
+}
+
+div#scheduleBox div.event-rows1 {
+	position: relative;
+}
+
+div#scheduleBox div.event-rows2 {
+	position: absolute;
+	width: 100%;
+}
+
+div#scheduleBox div.event-row {
+	height: 50px;
+}
+
+div#scheduleBox div.event-hours { /* col -> hours */
+	border-left: 1px #000000 dashed;
+}
+
+div#scheduleBox div.event-minute { /* col -> minute */
+	border-left: 1px #eeeeee dotted;
+}
+
+div#scheduleBox div.event-row-title div.event-row {
+	padding: 2px;
+	height: 47px;	
+}
+
+div#scheduleBox div.event-row-title div.event-row div {
+	padding: 5px;
+	padding-left: 1px;
+	padding-right: 1px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px #000000 solid;
+	background-color: #d5e1b8;
+	text-align: center;
+}
+
+div#scheduleBox div.event-row-title div.event-row div.undist {
+	color: #ffffff;
+	background-color: #c86351;
+}
+
+div#scheduleBox div.event-row-title div.event-row div.undist-count {
+	display: none;
+	padding: 3px 5px 5px 5px;
+	position: relative;
+	top: -40px;
+	left: 110px;
+	width: 20px;
+	height: 10px;
+	border-radius: 5px;
+	border: 1px #ffffff solid;
+	background-color: #ffb848;
+	color: #ffffff;
+}
+
+div#scheduleBox div.event-row-scope {
+}
+
+div#scheduleBox div.event-row-scope div.event-row {
+	border-bottom: 1px #000000 dashed;
+}
+
+div.event-more-left {
+	position: relative;
+	display: none;
+	z-index: 9;
+	top: 20px;
+	left:3px;
+	width: 100px;
+	height: 0px;
+	color: red;
+	font-weight: bold;
+}
+
+div.event-more-right {
+	position: relative;
+	float: right;
+	display: none;
+	z-index: 9;
+	top: 20px;
+	left:0px;
+	width: 100px;
+	height: 0px;
+	color: red;
+	font-weight: bold;
+	text-align: right;
+}
+
+div.event-more-left span {
+	cursor: pointer;
+}
+
+div.event-more-right span {
+	cursor: pointer;
+}
+
+/* Event Item */
+
+div#scheduleBox div.event-item-box {
+	position: absolute;
+	width: 0px;
+}
+
+div#scheduleBox div.event-item {
+	position: relative;
+	height: 100%;
+	width: 100px;
+	
+	user-select: none;
+	cursor: pointer;
+}
+
+div#scheduleBox div.event-item div[box] {
+	padding: 2px;
+	height: 44px;
+	border-radius: 5px;
+	border: 1px #000000 solid;
+	background-color: #e0eeef;
+	opacity: 0.7;
+	text-align: center;
+	font-size: 10px;
+}
+div#scheduleBox div.event-item div[box].overflow {
+	text-align: left;
+}
+div#scheduleBox div.sample-icon[type='0'] {
+	background-color: #e0eeef;
+}
+
+div#scheduleBox div.event-item[copied] {
+	z-index: -1;
+}
+div#scheduleBox div.event-item[copied] div[box] {
+	background-color: #cccccc;
+	opacity: 0.5;
+}
+
+div#scheduleBox div.event-item[type=follower] div[box] {
+	/* background-color: #aaa3cf; */
+}
+
+div#scheduleBox div.event-item[itemType='3'] div[box] {
+	background-color: #96af85;
+}
+div#scheduleBox div.sample-icon[type='3'] {
+	background-color: #96af85;
+}
+
+div#scheduleBox div.sample-icon[type='3m'] {
+	background-color: #f7f27a;
+}
+
+div#scheduleBox div.sample-icon[type='3n'] {
+	background-color: #32ce32;
+}
+
+div#scheduleBox div.event-item[achvstatus='1m'] div[box] {
+	background-color: #f7f27a;
+}
+
+div#scheduleBox div.event-item[achvstatus='1n'] div[box] {
+	background-color: #32ce32;
+}
+
+div#scheduleBox div.event-item[achvstatus='2'] div[box] {
+	background-color: #808080;
+}
+div#scheduleBox div.sample-icon[type='2'] {
+	background-color: #808080;
+}
+
+div#scheduleBox div.event-item[achvstatus='-2'] div[box] {
+	background-color: #f39d63;
+}
+div#scheduleBox div.sample-icon[type='-2'] {
+	background-color: #f39d63;
+}
+
+div#scheduleBox div.event-item[achvstatus='-11'] div[box] {
+	background-color: #ea9ed4;
+}
+div#scheduleBox div.sample-icon[type='-11'] {
+	background-color: #ea9ed4;
+}
+
+div#scheduleBox div.event-item[achvstatus='-12'] div[box] {
+	background-color: #89d6fa;
+}
+div#scheduleBox div.sample-icon[type='-12'] {
+	background-color: #89d6fa;
+}
+
+div#scheduleBox div.event-item div[time] {
+	font-size: 12px;
+}
+div#scheduleBox div.event-item div[customer] {
+	font-size: 16px;
+	font-weight: bold;
+}
+div#scheduleBox div.event-item div[flag] {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	font-size: 12px;
+	color: #ee0000;
+}
+div#scheduleBox div.event-item div[service] {
+	font-size: 12px;
+}
+
+div#scheduleBox div.event-item div[modify] {
+	position: relative;
+	float: right;
+	width: 30px;
+	height: 0px;
+	top: -55px;
+	left: 10px;
+	font-size: 16px;
+	text-align: right;
+}
+
+div#scheduleBox div.event-item div[comment] {
+	position: relative;
+	float: left;
+	width: 10px;
+	height: 0px;
+	top: -27px;
+	left: 0px;
+	font-size: 30px;
+	text-align: left;
+}
+
+div#scheduleBox div.event-item[achvstatus='-2'] div[box] div[modify] {
+	display: none;
+}
+
+div#scheduleBox div.event-item[itemType='3'] div[box] div[modify] {
+	display: none;
+}
+
+div#scheduleBox div.event-item[updstatus='0'] div[box] div[modify] {
+	color: #fd960f;
+}
+
+div#scheduleBox div.event-item[updstatus='1'] div[box] div[modify] {
+	color: #fd960f;
+}
+
+div#scheduleBox div.event-item[updstatus='2'] div[box] div[modify] {
+	color: gray;
+}
+
+
+div#scheduleBox div.sample-icon {
+	float: left;
+	display: inline-block;
+	padding: 0px;
+	height: 12px;
+	width: 12px;
+	border-radius: 3px;
+	border: 1px #666666 solid;
+}
+
+div#scheduleBox div.sample-text {
+	float: left;
+	display: inline-block;
+	padding: 1px 8px 0px 2px;
+	height: 20px;
+	font-size: 12px;
+}
+

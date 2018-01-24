@@ -1,0 +1,5 @@
+ALTER TABLE `user` 
+CHANGE COLUMN `email` `email` VARCHAR(128) NULL DEFAULT '' COMMENT 'メール' ;
+
+ALTER TABLE `customer` 
+CHANGE COLUMN `email` `email` VARCHAR(64) NULL DEFAULT '' COMMENT 'メール' ;
