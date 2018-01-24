@@ -1,7 +1,6 @@
 eclipse.preferences.version=1
 encoding//db/sql/10_table=UTF-8
 encoding//src/main=UTF-8
-encoding//src/main/jp/iesolutions/ienursing/actions/CsvLoadAction.java=UTF-8
 encoding//src/resources/velocity/convene_ja.vm=UTF-8
 encoding//src/resources/velocity/result_ja.vm=UTF-8
 encoding/db=UTF-8

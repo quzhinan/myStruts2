@@ -29,7 +29,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/httpclient-4.5.1.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/httpcore-4.4.3.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ienursing-service.jar" sourcepath="/ienursing-prod-service/src/main"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/iText-2.1.7.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jandex-2.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/java-apns.jar"/>
@@ -80,6 +79,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/quartz-2.2.3.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/slf4j-log4j12-1.7.7.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Java SE 1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="webapp/WEB-INF/classes"/>
 </classpath>
